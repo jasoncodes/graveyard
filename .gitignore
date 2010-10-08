@@ -1,0 +1,39 @@
+# ignore log files
+*.log
+log
+
+# ignore all uploads
+uploads
+
+# ignore textmate project files
+*.tmproj
+
+# ignore test coverage
+coverage
+
+# ignore doc directory
+doc
+
+tmp
+
+.idea
+coverage.data
+database.yml
+
+# ignore netbeans
+nbproject
+rerun.txt
+
+#ignore rvm
+.rvmrc
+
+# capybara
+capybara-*.html
+
+# bundler
+.bundle
+relock
+
+# tm-tags
+.tmtags
+

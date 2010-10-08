@@ -1,0 +1,29 @@
+postgresql: &postgresql
+  adapter: postgresql
+  encoding: utf8
+  min_messages: warning
+  pool: 5
+
+mysql: &mysql
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  pool: 5
+  username: root
+  password:
+  host: localhost
+
+development:
+  <<: *postgresql
+  database: graveyard_dev
+
+production:
+  <<: *postgresql
+  database: graveyard
+
+test: &TEST
+  <<: *postgresql
+  database: graveyard_test
+
+cucumber:
+  <<: *TEST
