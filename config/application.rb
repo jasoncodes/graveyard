@@ -41,4 +41,4 @@ module Graveyard
   end
 end
 
-Sass::Plugin.options[:template_location] = { 'app/stylesheets' => 'tmp/hassle/stylesheets' }
+Sass::Plugin.options[:template_location] = { 'app/stylesheets' => 'tmp/stylesheets' }
