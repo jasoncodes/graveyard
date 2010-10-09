@@ -4,19 +4,50 @@ body {
   background: #1D1D1D;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 12pt;
-  color: #fff;
+  color: #eee;
 }
 
-hgroup, section, footer {
+#header_container, section, footer {
+  position: relative;
   width: 960px;
   margin: 0 auto;
 }
 
 header {
-  height: 130px;
-  background: #1e1b3b;
+  background: #1e1b3b image_url("header_speckle.png");
   border-bottom: 3px solid #494573;
+  overflow: hidden;
 
-  h1 { margin: 10px 0; }
-  h2 { font-size: 14pt; margin-left: 156px; margin-top: -15px; text-transform: lowercase; color: #dbcef5;}
+  h1 { padding-top: 1em; margin-bottom: -1em;}
+  h2 { font-size: 14pt; margin-left: 156px; margin-top: 0.5em; margin-bottom: 0.75em; text-transform: lowercase; color: #dbcef5; }
+
+  nav {
+    position: absolute;
+    top: 0.5em;
+    right: 0;
+
+    ul {
+      a {
+        display: block;
+        color: #dbcef5;
+        text-decoration: none;
+        font-size: 15pt;
+        line-height: 1.75em;
+        padding: 0 0.75em 0.1em;
+
+        &:hover, &:focus, &:active { color: #fff; }
+      }
+      li { float: right; margin: 0.5em 0;}
+      li.login a {
+        border-radius: 10px;
+        background: rgba(110,110,110,0.3);
+
+        &:hover, &:active, &:focus { background: rgba(190,190,190,0.3); }
+      }
+    }
+  }
+}
+
+section {
+  margin-top: 10px;
 }

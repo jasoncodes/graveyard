@@ -10,9 +10,19 @@
     = csrf_meta_tag
   %body
     %header
-      %hgroup
-        %h1= image_tag 'graveyard_96.png', :size => '458x96'
-        %h2 You shouldn't need to work the graveyard shift to get paperwork done.
+      #header_container
+        %hgroup
+          %h1= image_tag 'graveyard_96.png', :size => '458x96'
+          %h2 You shouldn't need to work the graveyard shift to get paperwork done.
+        %nav
+          %ul
+            %li.login= link_to "Login", root_path
+            %li= link_to "Support", root_path
+            %li= link_to "Pricing", root_path
+
+    %div#notices
+      = notice
+      = alert
 
     %section
       = yield
