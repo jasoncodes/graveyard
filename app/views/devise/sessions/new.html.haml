@@ -1,9 +1,6 @@
-- content_for :stylesheets do
-  = stylesheet_link_tag 'forms'
-
 = semantic_form_for resource, :as => resource_name, :url => session_path(resource_name) do |f|
   - f.inputs do
-    = f.input :email
+    = f.input :email, :input_html => { :type => :email }
     = f.input :password
 
   = f.submit "Log in"
