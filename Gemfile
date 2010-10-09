@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'compass'
 gem 'httparty'
+gem 'devise', '~> 1.1.3'
 
 group :development do
   gem 'wirble'
