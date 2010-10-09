@@ -2,4 +2,8 @@ class WorkflowMax::Staff < WorkflowMax::Base
   def self.find_by_email email
     all.detect {|wm| wm.email == email}
   end
+
+  def jobs
+    @jobs ||= Job.find_by_staff_id self.id
+  end
 end
