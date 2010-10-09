@@ -2,3 +2,10 @@ en:
   devise:
     registrations:
       signed_up: 'You have signed up successfully. Activation instructions have been e-mailed.'
+    mailer:
+      confirmation_instructions:
+        subject: 'Graveyard: Activate your account'
+      reset_password_instructions:
+        subject: 'Graveyard: Password reset'
+      unlock_instructions:
+        subject: 'Graveyard: Unlock account'
