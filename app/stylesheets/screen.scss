@@ -24,8 +24,8 @@ body {
     width: 960px;
     margin: 0 auto;
   }
-  &.alert { background-color: $flash_alert_bg; border-bottom: 2px solid $flash_alert_bg + ($header_border - $header_background); }
-  &.notice { background-color: $flash_notice_bg; border-bottom: 2px solid $flash_notice_bg + ($header_border - $header_background); }
+  &.alert { background-color: $flash_alert_bg; border-bottom: 2px solid lighten($flash_alert_bg, 5%); }
+  &.notice { background-color: $flash_notice_bg; border-bottom: 2px solid lighten($flash_notice_bg, 5%); }
 }
 
 header {

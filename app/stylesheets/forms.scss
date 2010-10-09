@@ -32,7 +32,7 @@
             background: $form_input;
             margin-bottom: 1em;
 
-            &:focus, &:active { outline: 0; background: $form_highlight; }
+            &:focus, &:active { outline: 0; -webkit-box-shadow: $primary_text 0 0 50px; -webkit-transition: -webkit-box-shadow 0.25s linear; }
           }
         }
 
@@ -52,7 +52,11 @@
       @include text-shadow(rgba(255, 255, 255, 0.398438), -1px, 1px, 1px);
       border: 0;
 
-      &:hover, &:active, &:focus {
+      &:hover, &:focus {
+        outline: 0;
+        @include linear-gradient(color-stops($form_gradient_hover, $form_gradient_top));
+      }
+      &:active {
         outline: 0;
         @include linear-gradient(color-stops($form_gradient_bottom, $form_gradient_top));
       }
