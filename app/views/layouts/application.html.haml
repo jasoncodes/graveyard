@@ -9,4 +9,12 @@
     = javascript_include_tag :defaults
     = csrf_meta_tag
   %body
-    = yield
+    %header
+      %hgroup
+        %h1= image_tag 'graveyard_96.png', :size => '458x96'
+        %h2 You shouldn't need to work the graveyard shift to get paperwork done.
+
+    %section
+      = yield
+
+    %footer
