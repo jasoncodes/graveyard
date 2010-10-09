@@ -2,5 +2,21 @@
 
 body {
   background: #1D1D1D;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12pt;
   color: #fff;
+}
+
+hgroup, section, footer {
+  width: 960px;
+  margin: 0 auto;
+}
+
+header {
+  height: 130px;
+  background: #1e1b3b;
+  border-bottom: 3px solid #494573;
+
+  h1 { margin: 10px 0; }
+  h2 { font-size: 14pt; margin-left: 156px; margin-top: -15px; text-transform: lowercase; color: #dbcef5;}
 }
