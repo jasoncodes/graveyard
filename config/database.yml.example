@@ -4,15 +4,6 @@ postgresql: &postgresql
   min_messages: warning
   pool: 5
 
-mysql: &mysql
-  adapter: mysql
-  encoding: utf8
-  reconnect: false
-  pool: 5
-  username: root
-  password:
-  host: localhost
-
 development:
   <<: *postgresql
   database: graveyard_dev
