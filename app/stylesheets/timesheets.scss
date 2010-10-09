@@ -1,0 +1,12 @@
+@import "compass/css3";
+
+table.timesheet {
+  width: 100%;
+  border-top: 20px solid #494573;
+  border-bottom: 20px solid #494573;
+  @include border-radius(20px);
+  @include linear-gradient(color-stops(#7662ec, #8D79F2));
+
+  th { width: 90px;}
+  th.job_name { width: 250px;}
+}
