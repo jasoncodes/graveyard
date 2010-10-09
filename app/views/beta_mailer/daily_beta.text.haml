@@ -1,0 +1,11 @@
+%p
+  Today, the following users registered interest in the Graveyard private beta:
+  
+%ul
+  - BetaInterest.created_today.each do |bi|
+    %li.email= mail_to bi.email
+    
+%p
+  Regards,
+  %br
+  Graveyard.
