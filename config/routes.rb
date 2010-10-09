@@ -2,6 +2,11 @@ Graveyard::Application.routes.draw do
   devise_for :users
 
   resources :timesheets
+  resources :welcome do
+    collection do
+      post 'register_interest'
+    end
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
   match 'features' => 'welcome#features'

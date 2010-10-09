@@ -2,7 +2,7 @@
 @import 'colours';
 
 .formtastic {
-  &.user {
+  &.user, &.beta_interest {
     width: 376px;
     padding: 10px 20px;
     margin: 2em auto 0;
