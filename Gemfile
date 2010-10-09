@@ -9,6 +9,12 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'compass'
 
+group :development do
+  gem 'wirble'
+  gem 'awesome_print', :require => 'ap'
+  gem 'bond'
+end
+
 group :test do
   gem 'cucumber'
   gem 'rspec-rails', '~> 2.0.0.beta.19'

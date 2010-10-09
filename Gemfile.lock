@@ -30,6 +30,8 @@ GEM
     activesupport (3.0.0)
     arel (1.0.1)
       activesupport (~> 3.0.0)
+    awesome_print (0.2.1)
+    bond (0.3.0)
     builder (2.1.2)
     compass (0.10.5)
       haml (>= 3.0.4)
@@ -108,11 +110,14 @@ GEM
     treetop (1.4.8)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
+    wirble (0.1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
+  bond
   compass
   cucumber
   formtastic (~> 1.1.0.beta)
@@ -124,3 +129,4 @@ DEPENDENCIES
   rails (= 3.0.0)
   rspec-rails (~> 2.0.0.beta.19)
   shoulda
+  wirble
