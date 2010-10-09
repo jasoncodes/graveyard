@@ -9,6 +9,7 @@
     background: $form_background;
     @include border-radius(15px);
     -webkit-box-shadow: #171717 0px 0px 10px;
+    overflow: hidden;
 
     h2 {
       font-size: 16pt;

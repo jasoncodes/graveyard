@@ -1,0 +1,11 @@
+.private_beta
+  %h2 One timesheeting application to rule them all.
+  %p
+    Graveyard is in private beta at the moment.
+    Register your email below for an invitation.
+
+  = semantic_form_for User.new, :as => User.new, :url => new_user_confirmation_path, :html => { :method => :post } do |f|
+    - f.inputs do
+      = f.input :email, :input_html => { :type => :email, :placeholder => 'Email' }, :label => ''
+
+    = f.submit "Submit"

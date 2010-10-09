@@ -30,3 +30,15 @@ ul.features {
     h2, p { margin-left: 156px; }
   }
 }
+
+.private_beta {
+  margin: 2em 0;
+  text-align: center;
+  h2 { font-size: 24pt; line-height: 2em; }
+  p { line-height: 1.5em;}
+  .formtastic.user {
+    width: 466px;
+    .inputs { float: left; .string input { margin-bottom: 2px; } }
+    input[type=submit] { margin-top: 4px; }
+  }
+}
