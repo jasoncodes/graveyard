@@ -3,3 +3,6 @@
 
 en:
   hello: "Hello world"
+  devise:
+    registrations:
+      signed_up: 'You have signed up successfully. Activation instructions have been e-mailed.'
