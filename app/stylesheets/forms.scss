@@ -1,0 +1,62 @@
+@import "compass/css3";
+
+$secondary_text_colour: #dbcef5;
+
+.formtastic {
+  &.user {
+    width: 376px;
+    padding: 10px 20px;
+    margin: 2em auto 0;
+    background: #373553;
+    @include border-radius(15px);
+
+    h2 {
+      font-size: 20pt;
+      font-weight: bold;
+      color: #d6c2ff;
+      margin: 0.25em 0 1em;
+    }
+    .inputs ol {
+      li {
+        label { display: block; color: $secondary_text_colour; font-size: 11pt; line-height: 1.5em;}
+        &.string, &.password {
+          input {
+            font-size: 14pt;
+            padding: 5px 8px;
+            width: 360px;
+            @include border-radius(7px);
+            border: 0;
+            background: #C9C3E6;
+            margin-bottom: 1em;
+
+            &:focus { outline: 0; background: #C2E3F3; }
+          }
+        }
+
+        abbr { display: none; }
+      }
+    }
+    input[type=submit] {
+      float: right;
+      font-size: 12pt;
+      background: rgba(141, 121, 242, 0.7);
+      color: #000;
+      padding: 0.4em 1em;
+      text-transform: lowercase;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      @include border_radius(20px);
+      @include linear-gradient(color-stops(#7662ec, #8D79F2));
+      @include text-shadow(rgba(255, 255, 255, 0.398438), -1px, 1px, 1px);
+      border: 0;
+    }
+    .links.devise {
+      a {
+        font-size: 11pt;
+        color: #8D79F2;
+        line-height: 1.25em;
+        text-decoration: none;
+        &:hover, &:focus, &:active { text-decoration: underline; }
+      }
+    }
+  }
+}

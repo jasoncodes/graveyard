@@ -2,6 +2,12 @@
 @import "compass/css3/border-radius";
 @include reset-html5;
 
+$header_background: #1e1b3b;
+$header_border: #494573;
+$secondary_text_colour: #dbcef5;
+$flash_notice_bg: #040;
+$flash_alert_bg: #8f0606;
+
 body {
   background: #1D1D1D;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -15,13 +21,32 @@ body {
   margin: 0 auto;
 }
 
+#notices {
+  div {
+    color: #fff;
+    font-weight: bold;
+    line-height: 2em;
+    width: 960px;
+    margin: 0 auto;
+  }
+  &.alert { background-color: $flash_alert_bg; border-bottom: 2px solid $flash_alert_bg + ($header_border - $header_background); }
+  &.notice { background-color: $flash_notice_bg; border-bottom: 2px solid $flash_notice_bg + ($header_border - $header_background); }
+}
+
 header {
-  background: #1e1b3b image_url("header_speckle.png");
-  border-bottom: 3px solid #494573;
+  background: $header_background image_url("header_speckle.png");
+  border-bottom: 3px solid $header_border;
   overflow: hidden;
 
   h1 { padding-top: 1em; margin-bottom: -1em;}
-  h2 { font-size: 14pt; margin-left: 156px; margin-top: 0.5em; margin-bottom: 0.75em; text-transform: lowercase; color: #dbcef5; }
+  h2 {
+    font-size: 14pt;
+    margin-left: 156px;
+    margin-top: 0.5em;
+    margin-bottom: 0.75em;
+    text-transform: lowercase;
+    color: $secondary_text_colour;
+  }
 
   nav {
     position: absolute;
@@ -29,22 +54,31 @@ header {
     right: 0;
 
     ul {
+      margin-top: 0.5em;
+      display: inline-block;
       a {
         display: block;
-        color: #dbcef5;
+        color: $secondary_text_colour;
         text-decoration: none;
-        font-size: 15pt;
-        line-height: 1.75em;
-        padding: 0 0.75em 0.1em;
+        font-size: 13pt;
+        line-height: 1.25em;
 
         &:hover, &:focus, &:active { color: #fff; }
       }
-      li { float: right; margin: 0.5em 0;}
-      li.login a {
+      li {
+        float: right; 
+        margin: 0.5em 0;
+        padding: 0 0.75em 0.1em;
+      }
+
+      &.account_options {
         @include border-radius(10px);
         background: rgba(110,110,110,0.3);
 
-        &:hover, &:active, &:focus { background: rgba(190,190,190,0.3); }
+        li {
+          border-right: 2px solid #494573;
+          &:first-child { border: 0; }
+        }
       }
     }
   }
