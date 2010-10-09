@@ -18,3 +18,15 @@ body {
 section {
   margin-top: 10px;
 }
+
+ul.features {
+  padding-top: 1em;
+  li {
+    padding-bottom: 2em;
+    border-bottom: 2px solid $header_border;
+    margin-bottom: 2em;
+    img { float: left;}
+    h2 { font-size: 18pt; margin-bottom: 1em; }
+    h2, p { margin-left: 156px; }
+  }
+}
