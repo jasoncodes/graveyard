@@ -30,7 +30,8 @@ module WorkflowMax
     end
 
     def self.list(options = {})
-      response = get("/#{api_name}/list", options)['Response']
+      path = options.delete(:path) || "/#{api_name}/list"
+      response = get(path, options)['Response']
       raise "Bad status: #{response.inspect}" unless response && response['Status'] == 'OK'
       list = (response["#{class_name}List"] || response[class_name.pluralize])[class_name]
       list.map do |row|
