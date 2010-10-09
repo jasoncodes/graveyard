@@ -26,9 +26,13 @@ module WorkflowMax
     end
 
     def self.all
-      response = get("/#{api_name}/list")['Response']
+      list
+    end
+
+    def self.list(options = {})
+      response = get("/#{api_name}/list", options)['Response']
       raise "Bad status: #{response.inspect}" unless response && response['Status'] == 'OK'
-      list = response["#{class_name}List"][class_name]
+      list = (response["#{class_name}List"] || response[class_name.pluralize])[class_name]
       list.map do |row|
         row = row.map do |k,v|
           [k.to_s.underscore.to_sym, v]
