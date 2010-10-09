@@ -1,0 +1,65 @@
+@import "compass/css3";
+@import 'colours';
+
+header {
+  background: $header_background;
+  border-bottom: 3px solid $header_border;
+  overflow: hidden;
+
+  h1 { padding-top: 1em; margin-bottom: -1em; }
+  h2 {
+    font-size: 14pt;
+    margin-left: 156px;
+    margin-top: 0.5em;
+    margin-bottom: 0.75em;
+    text-transform: lowercase;
+    color: $secondary_text;
+  }
+
+  nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    ul {
+      margin-top: 0.5em;
+      display: inline-block;
+
+      a {
+        display: block;
+        color: $nav_text;
+        text-decoration: none;
+        font-size: 13pt;
+        line-height: 1.25em;
+
+        &:hover, &:focus, &:active {
+          color: $nav_hover;
+          @include transition(color, 0.4s, linear, 0);
+        }
+      }
+      li { float: right; margin: 0.5em 0; padding: 0 0.75em 0.1em; }
+
+      &.account_options {
+        @include border-radius(10px);
+        background: $account_nav_bg;
+
+        li {
+          border-right: 2px solid $nav_separator;
+          &:first-child { border: 0; }
+        }
+      }
+    }
+  }
+}
+
+#notices {
+  div {
+    color: $flash_text;
+    font-weight: bold;
+    line-height: 2em;
+    width: 960px;
+    margin: 0 auto;
+  }
+  &.alert { background-color: $flash_alert_bg; border-bottom: 2px solid lighten($flash_alert_bg, 5%); }
+  &.notice { background-color: $flash_notice_bg; border-bottom: 2px solid lighten($flash_notice_bg, 5%); }
+}
