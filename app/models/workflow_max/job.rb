@@ -3,7 +3,7 @@ class WorkflowMax::Job < WorkflowMax::Base
     list :query => { :from => date_from.strftime('%Y%m%d'), :to => date_to.strftime('%Y%m%d')}
   end
 
-  def self.find_by_staff_id(staff_id)
+  def self.find_all_by_staff_id(staff_id)
     list :path => "/#{api_name}/staff/#{staff_id}"
   end
 end

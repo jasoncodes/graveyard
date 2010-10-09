@@ -4,6 +4,6 @@ class WorkflowMax::Staff < WorkflowMax::Base
   end
 
   def jobs
-    @jobs ||= Job.find_by_staff_id self.id
+    @jobs ||= Job.find_all_by_staff_id self.id
   end
 end
