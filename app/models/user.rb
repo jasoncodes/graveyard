@@ -7,7 +7,9 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
-  def before_create
+  before_create :link_to_workflow_max
+
+  def link_to_workflow_max
     self.workflowmax_staff_id = WorkflowMax::Staff.find_by_email(self.email).id
   end
 
