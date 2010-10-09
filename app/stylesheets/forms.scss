@@ -1,35 +1,38 @@
 @import "compass/css3";
-
-$secondary_text_colour: #dbcef5;
+@import 'colours';
 
 .formtastic {
   &.user {
     width: 376px;
     padding: 10px 20px;
     margin: 2em auto 0;
-    background: #373553;
+    background: $form_background;
     @include border-radius(15px);
+    -webkit-box-shadow: #171717 0px 0px 10px;
 
     h2 {
-      font-size: 20pt;
+      font-size: 16pt;
       font-weight: bold;
-      color: #d6c2ff;
-      margin: 0.25em 0 1em;
+      border-bottom: 1px solid $header_border;
+      color: $primary_text;
+      padding: 0 0.5em 0.5em 0;
+      margin: 0.25em 0 0.5em;
     }
     .inputs ol {
       li {
-        label { display: block; color: $secondary_text_colour; font-size: 11pt; line-height: 1.5em;}
+        label { display: block; color: $primary_text; font-size: 11pt; line-height: 1.5em;}
         &.string, &.password {
           input {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             font-size: 14pt;
             padding: 5px 8px;
             width: 360px;
             @include border-radius(7px);
             border: 0;
-            background: #C9C3E6;
+            background: $form_input;
             margin-bottom: 1em;
 
-            &:focus { outline: 0; background: #C2E3F3; }
+            &:focus, &:active { outline: 0; background: $form_highlight; }
           }
         }
 
@@ -45,15 +48,21 @@ $secondary_text_colour: #dbcef5;
       text-transform: lowercase;
       font-family: 'Helvetica Neue', Arial, sans-serif;
       @include border_radius(20px);
-      @include linear-gradient(color-stops(#7662ec, #8D79F2));
+      @include linear-gradient(color-stops($form_gradient_top, $form_gradient_bottom));
       @include text-shadow(rgba(255, 255, 255, 0.398438), -1px, 1px, 1px);
       border: 0;
+
+      &:hover, &:active, &:focus {
+        outline: 0;
+        @include linear-gradient(color-stops($form_gradient_bottom, $form_gradient_top));
+      }
     }
+
     .links.devise {
       a {
         font-size: 11pt;
-        color: #8D79F2;
-        line-height: 1.25em;
+        color: $form_links;
+        line-height: 1.5em;
         text-decoration: none;
         &:hover, &:focus, &:active { text-decoration: underline; }
       }
