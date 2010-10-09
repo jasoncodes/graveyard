@@ -10,7 +10,13 @@ class User < ActiveRecord::Base
   before_create :link_to_workflow_max
 
   def link_to_workflow_max
-    self.workflowmax_staff_id = WorkflowMax::Staff.find_by_email(self.email).id
+    staff = WorkflowMax::Staff.find_by_email(self.email)
+    if staff.nil?
+      errors.add :email, 'is not a valid WorkflowMax staff email address.'
+      false
+    else
+      self.workflowmax_staff_id = staff.id
+    end
   end
 
 end
