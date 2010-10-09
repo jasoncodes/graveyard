@@ -8,6 +8,7 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'pg'
 gem 'compass'
+gem 'httparty'
 
 group :development do
   gem 'wirble'
