@@ -2,7 +2,7 @@
 @import 'colours';
 
 header {
-  background: $header_background;
+  background: $header_background image_url("speckle.png");
   border-bottom: 3px solid $header_border;
   overflow: hidden;
 
