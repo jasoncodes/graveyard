@@ -10,6 +10,7 @@ gem 'pg'
 gem 'compass'
 gem 'httparty'
 gem 'devise', '~> 1.1.3'
+gem 'analytical', '~> 2.2.0'
 
 group :development do
   gem 'wirble'
