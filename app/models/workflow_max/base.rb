@@ -1,4 +1,5 @@
 module WorkflowMax
+
   class Base
     include ActiveModel::Validations
     include ActiveModel::Conversion
@@ -103,4 +104,30 @@ module WorkflowMax
     end
 
   end
+
+  module AwesomePrint
+
+    def self.included(base)
+      unless base.method_defined? :printable_without_workflow_max
+        base.send :alias_method_chain, :printable, :workflow_max
+      end
+    end
+
+    def printable_with_workflow_max(object)
+      printable = printable_without_workflow_max(object)
+      if printable == :self && object.is_a?(::WorkflowMax::Base)
+        printable = :workflow_max_instance
+      else
+        printable
+      end
+    end
+
+    def awesome_workflow_max_instance(object)
+      "#{object} #{awesome_hash(object.attributes)}"
+    end
+
+  end
+
 end
+
+AwesomePrint.send(:include, WorkflowMax::AwesomePrint) if defined? AwesomePrint
