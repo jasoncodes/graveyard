@@ -1,6 +1,6 @@
 class WorkflowMax::Job < WorkflowMax::Base
-  def self.all(date_from, date_to)
-    list :query => { :from => date_from.strftime('%Y%m%d'), :to => date_to.strftime('%Y%m%d')}
+  def self.all(date_range)
+    list :query => date_range_query(date_range)
   end
 
   def self.find_all_by_staff_id(staff_id)

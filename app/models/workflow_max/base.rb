@@ -69,6 +69,15 @@ module WorkflowMax
       new response[class_name]
     end
 
+    def self.format_date(date)
+      date = Date.parse(date) unless date.is_a? Date
+      date.strftime '%Y%m%d'
+    end
+
+    def self.date_range_query(date_range)
+      { :from => format_date(date_range.min), :to => format_date(date_range.max) }
+    end
+
     attr_accessor :attributes
 
     def initialize(attributes)
