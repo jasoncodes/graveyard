@@ -5,7 +5,7 @@
     Register your email below for an invitation.
 
   = semantic_form_for BetaInterest.new, :as => BetaInterest.new, :url => register_interest_welcome_index_path, :html => { :method => :post } do |f|
-    - f.inputs do
+    = f.inputs do
       = f.input :email, :input_html => { :type => :email, :placeholder => 'Email' }, :label => false
 
     = f.submit "Submit"
