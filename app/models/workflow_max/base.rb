@@ -35,11 +35,26 @@ module WorkflowMax
       raise "Bad status: #{response.inspect}" unless response && response['Status'] == 'OK'
       list = (response["#{class_name}List"] || response[class_name.pluralize])[class_name]
       list.map do |row|
-        row = row.map do |k,v|
-          [k.to_s.underscore.to_sym, v]
-        end
         new row
       end
+    end
+
+    def self.fix_attributes(data)
+      HashWithIndifferentAccess.new Hash[
+        data.map do |key,value|
+          value = case value
+          when Hash
+            fix_attributes value
+          when Array
+            value.map do |entry|
+              entry.is_a?(Hash) ? fix_attributes(entry) : entry
+            end
+          else
+            value
+          end
+          [key.to_s.underscore.to_sym, value]
+        end
+      ]
     end
 
     def self.find(id)
@@ -51,7 +66,7 @@ module WorkflowMax
     attr_accessor :attributes
 
     def initialize(attributes)
-      self.attributes = HashWithIndifferentAccess.new.merge(Hash[attributes])
+      self.attributes = self.class.fix_attributes(attributes)
     end
 
     def inspect
