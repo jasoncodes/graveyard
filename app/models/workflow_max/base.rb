@@ -34,7 +34,12 @@ module WorkflowMax
       path = options.delete(:path) || "/#{api_name}/list"
       response = get(path, options)['Response']
       raise "Bad status: #{response.inspect}" unless response && response['Status'] == 'OK'
-      list = (response["#{class_name}List"] || response[class_name.pluralize])[class_name]
+      lists = response.slice(class_name.pluralize, "#{class_name}List")
+      if lists.size != 1
+        raise "Could not find list in response"
+      end
+      list = lists.values.first.try(:[], class_name) || []
+      list = [list] unless list.is_a? Array
       list.map do |row|
         new row
       end
