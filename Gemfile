@@ -19,7 +19,15 @@ group :development do
 end
 
 group :test do
-  gem 'cucumber'
   gem 'rspec-rails', '~> 2.0.0.beta.19'
   gem 'shoulda'
+end
+
+group :cucumber do
+  gem 'cucumber'
+end
+
+group :test, :cucumber do
+  gem 'vcr'
+  gem 'webmock'
 end
