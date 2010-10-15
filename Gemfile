@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem 'rails', '~> 3.0.0'
 gem 'formtastic', '~> 1.1.0.beta'
 gem 'inherited_resources', '~> 1.1'
 gem 'haml'
