@@ -24,7 +24,12 @@ group :test do
 end
 
 group :cucumber do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'cucumber-rails'
   gem 'cucumber'
+  gem 'spork'
+  gem 'launchy'
 end
 
 group :test, :cucumber do
