@@ -37,3 +37,5 @@ relock
 # tm-tags
 .tmtags
 
+# cassettes
+spec/fixtures/vcr_cassettes
