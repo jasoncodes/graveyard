@@ -14,7 +14,7 @@ module ActionView::Helpers::AssetTagHelper
     if asset_id.blank?
       org_dir = config.assets_dir
       begin
-        config.assets_dir = File.join(Rails.root, 'tmp')
+        config.assets_dir = File.join(Rails.root, 'tmp', 'hassle')
         asset_id = rails_asset_id_without_tmp_path source
       ensure
         config.assets_dir = org_dir

@@ -40,5 +40,3 @@ module Graveyard
     config.filter_parameters += [:password]
   end
 end
-
-Sass::Plugin.options[:template_location] = { 'app/stylesheets' => 'tmp/stylesheets' }
