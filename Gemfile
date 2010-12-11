@@ -11,7 +11,7 @@ gem 'compass'
 gem 'httparty'
 gem 'devise', '~> 1.1.3'
 gem 'analytical', '~> 2.2.0'
-gem 'hassle', '0.0.1', :git => 'git://github.com/fphilipe/hassle.git'
+gem 'hassle', :git => 'git://github.com/jasoncodes/hassle.git'
 
 group :development do
   gem 'wirble'

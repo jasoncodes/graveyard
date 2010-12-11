@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/fphilipe/hassle.git
-  revision: faca12fd538034e0c694a995e3660f902d3be9b6
+  remote: git://github.com/jasoncodes/hassle.git
+  revision: 74f9a95ae6273bdc200a46c8bd503fa7704f98a7
   specs:
     hassle (0.0.1)
       haml
@@ -180,7 +180,7 @@ DEPENDENCIES
   formtastic (~> 1.1.0.beta)
   haml
   haml-rails
-  hassle (= 0.0.1)!
+  hassle!
   httparty
   inherited_resources (~> 1.1)
   jquery-rails
