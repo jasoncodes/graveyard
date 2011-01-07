@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/jasoncodes/hassle.git
-  revision: 74f9a95ae6273bdc200a46c8bd503fa7704f98a7
+  revision: a61495da1957d8db509ef72fa8c5f99c562d7f42
   specs:
     hassle (0.0.1)
       haml
